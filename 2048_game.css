@@ -1,0 +1,93 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+.game{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-image: url(img.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+	.game .header{
+		display: flex;
+		flex-direction: row;
+		justify-content: center; 
+		justify-content: space-between;
+		height: 12vmin;
+		width: 100vh;
+		font-size: 10vmin;
+		box-sizing: border-box;
+		flex-grow: 0;
+	}
+
+	.game .header .restart {
+		margin: 0 20px;
+	}
+		.restart{
+			width: 150px;
+			height: 50px;
+			border: none;
+			background-color: #000;
+			color: #776E66;
+			font-size: 30px;
+		}
+
+			.restart:hover{
+				background-color: #776E66;
+				color: #CDC0B5;
+				width: 200px;
+			}
+
+
+	.game .field{
+		position: relative;
+		z-index:  1;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		height: 100%;
+		width: 100%;
+		flex-shrink: 1;
+	}
+		.game .field .cell {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1%;
+			box-sizing: border-box;
+			border-radius: 15%;
+			font-size: 10vmin;
+			background-color: #CDC0B5;
+			color: #776E66;
+		}
+		.game .field .cell.hightlight {
+			margin: 0;
+		}
+
+		.game .field .cell.animate {
+			position: absolute;
+			margin: 0;
+			transition: left 0.1s, top 0.1s;
+			z-index: -1;
+			animation-name: hide;
+			animation-duration: 0.1s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+		}
+
+.rating{
+	color: #CDC0B5;
+	font-size: 50px;
+}
